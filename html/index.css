@@ -53,6 +53,7 @@ body {
 
 .identity input {
   background: #333;
+  text-align: center;
 }
 
 .plate input {
