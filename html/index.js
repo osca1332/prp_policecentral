@@ -64,16 +64,15 @@ $(function () {
 	});
 
 
-
-    $(".nplate").click(function () {
+    function nplate()
+    {
         $("table").show();
         $("table2").hide();
-        return
-    })
+    }
 
-     (".pname").click(function () {
+    function pname()
+    {
         $("table2").show();
         $("table").hide();
-        return
-    })
+    }
 })
