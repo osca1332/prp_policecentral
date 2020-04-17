@@ -38,7 +38,7 @@ $(function () {
         if (item.type === "idn") {
             document.getElementById("i-navn").value = "Ikke registreret";
             document.getElementById("i-efternavn").value = "Ikke registreret";
-            document.getElementById("i-telf").value = "Ikke registreret";
+            document.getElementById("i-telf").value = 00000000;
         }
     })
     // if the person uses the escape key, it will exit the resource
