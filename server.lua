@@ -42,6 +42,7 @@ AddEventHandler("licenseCheck", function(data)
 
 		else
 			print("Bilen er ikke registreret!")
+			TriggerClientEvent("pc:send", pl, -1, identity)
 		end
 	end)
 end)
