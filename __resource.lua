@@ -15,7 +15,7 @@ Version: BETA-0.1
 
 resource_manifest_version '05cfa83c-a124-4cfa-a768-c24a5811d8f9'
 
-dependency "vrp_mysql"
+dependency "mysql-async"
 
 ui_page "html/index.html"
 
@@ -37,6 +37,7 @@ client_scripts {
 }
 
 server_scripts {
+  "@mysql-async/lib/MySQL.lua",
 	"@vrp/lib/utils.lua",
   "server.lua"
 }
