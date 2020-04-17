@@ -49,7 +49,7 @@ body {
 }
 
 .identity {
-  position: absolute;
+  position: relative;
   padding-top: 85px;
 }
 
