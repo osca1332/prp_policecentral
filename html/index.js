@@ -33,7 +33,7 @@ $(function () {
             document.getElementById("i-navn").value = item.first;
             document.getElementById("i-efternavn").value = item.name;
             document.getElementById("i-telf").value = item.phone;
-            document.getElementById("i-cpr").value = "${item.cpr}-${item.uid}";
+            document.getElementById("i-cpr").value = `${item.cpr}-${item.uid}`;
         }
 
         if (item.type === "idn") {
@@ -54,9 +54,9 @@ $(function () {
     $(".plate").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
             var plate = $("#nplate").val();
-            plate = plate.slice(0, plate.lenght-2)
+            plate = plate.slice(0, -2);
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
-    			text: $("#nplate").val(),
+    			text: plate,
     		}));
             return
 	    }
