@@ -53,6 +53,8 @@ $(function () {
 
     $(".plate").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
+            var plate = $("#nplate").val();
+            plate = plate.slice(0, plate.lenght-2)
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
     			text: $("#nplate").val(),
     		}));
