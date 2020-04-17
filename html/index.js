@@ -54,7 +54,7 @@ $(function () {
     $(".plate").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
             var plate = $("#nplate").val();
-            if(document.getElementById("type").value == "c") {plate = plate.slice(0, -2);}
+            if(document.getElementById("type").value == "c") {plate = plate.slice(0, plate.length-2);}
             
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
     			text: plate,
@@ -65,16 +65,15 @@ $(function () {
 
 
 
-    $("#331").click(function () {
-        $("#pTjek").show();
-        $("#eTjek").hide();
+    $(".nplate").click(function () {
+        $("table").show();
+        $("table2").hide();
         return
     })
 
-     $("#332").click(function () {
-        $("#pTjek").hide();
-        $("#eTjek").show();
-        
+     (".pname").click(function () {
+        $("table2").show();
+        $("table").hide();
         return
     })
 })
