@@ -33,12 +33,14 @@ $(function () {
             document.getElementById("i-navn").value = item.first;
             document.getElementById("i-efternavn").value = item.name;
             document.getElementById("i-telf").value = item.phone;
+            document.getElementById("i-cpr").value = item.cpr;
         }
 
         if (item.type === "idn") {
             document.getElementById("i-navn").value = "Ikke registreret";
             document.getElementById("i-efternavn").value = "Ikke registreret";
             document.getElementById("i-telf").value = 00000000;
+            document.getElementById("i-cpr").value = 00000000;
         }
     })
     // if the person uses the escape key, it will exit the resource
