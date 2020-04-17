@@ -63,12 +63,15 @@ $(function () {
 	    }
 	});
 
-
-    function nplate()
-    {
+    $(".nplate").click(function() {
         $("table").show();
         $("table2").hide();
-    }
+    });
+
+    $(".pname").click(function() {
+        $("table2").show();
+        $("table").hide();
+    });
 
     function pname()
     {
