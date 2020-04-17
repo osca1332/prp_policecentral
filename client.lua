@@ -51,7 +51,6 @@ end)
 
 RegisterNUICallback("licenseCheck", function(data)
 	TriggerServerEvent("licenseCheck", tostring(data.text))
-	SetDisplay(false)
 end)
 
 
