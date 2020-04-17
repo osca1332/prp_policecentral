@@ -25,7 +25,7 @@ RegisterNetEvent("licenseCheck")
 AddEventHandler("licenseCheck", function(data)
 
 	local src = sourec
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE registratoin=@registration", {registration = data}, function(rows)
+	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE registration=@registration", {registration = data}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
 			-- display identity and business
