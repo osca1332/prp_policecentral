@@ -23,8 +23,9 @@ end)
 
 
 RegisterNetEvent("licenseCheck")
-AddEventHandler("licenseCheck", function(data)
+AddEventHandler("licenseCheck", function(data, type)
 
+	local src = sourec
 
 	MySQL.query("vRP/get_userbyreg", {reg = data}, function(rows, affected)
 
@@ -44,7 +45,7 @@ AddEventHandler("licenseCheck", function(data)
 			            print("Alder: "..age)
 			            print("Telefonnr: "..phone)
 	            
-			            --TriggerClientEvent("pc:send", source, 1, identity)
+			            TriggerClientEvent("pc:send", src, 1, identity)
 
 					else
 						print("Bilen er ikke registreret!")

@@ -1,4 +1,9 @@
 $(function () {
+
+    var name;
+    var firstname;
+    var phone;
+    var cpr;
     function display(bool) {
         if (bool) {
             $(".tablet").show();
@@ -21,8 +26,11 @@ $(function () {
         }
 
         if (item.type === "id") {
-            $("#form__group").hide();
-            $(".identity").show();
+            name = item.name;
+            firstname = item.first;
+            phone = item.phone;
+            cpr = item.cpr
+            $("#nplate").val() = name;
         }
     })
     // if the person uses the escape key, it will exit the resource
@@ -33,10 +41,11 @@ $(function () {
         }
     };
 
-    $("#name").on("keydown",function search(e) {
+    $(".plate").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
-    			text: $(this).val()
+    			text: $("#nplate").val(),
+                type: $("#type").val()
     		}));
             return
 	    }

@@ -50,7 +50,7 @@ end)
 
 
 RegisterNUICallback("licenseCheck", function(data)
-	TriggerServerEvent("licenseCheck", {data.text})
+	TriggerServerEvent("licenseCheck", tostring(data.text), tostring(data.type))
 	SetDisplay(false)
 end)
 
@@ -122,8 +122,13 @@ RegisterNetEvent("pc:send")
 AddEventHandler("pc:send", function(id, data)
 	if id == 1 then
 		SetDisplay(false)
-		local identity = data
-		print(identity.name)
+		SendNUIMessage({
+	        type = "id",
+	        name = data.name,
+	        first = data.firstname,
+	        cpr = data.registration,
+	        phone = data.phone
+	    })
 
 	end
 end)
