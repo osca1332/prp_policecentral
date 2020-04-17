@@ -48,7 +48,16 @@ body {
   padding-left: 30px;
 }
 
-.identity {
+.table2 {
+  height: 85%;
+  width: 95%;
+  background: #222;
+  border-radius: 25px;
+  position: absolute; 
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid white;
+  display: none;
 }
 
 .identity input {
