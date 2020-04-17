@@ -30,7 +30,7 @@ $(function () {
             firstname = item.first;
             phone = item.phone;
             cpr = item.cpr
-            document.getElementById("i-navn").value = item.firstname;
+            document.getElementById("i-navn").value = item.first;
             document.getElementById("i-efternavn").value = item.name;
             document.getElementById("i-telf").value = item.phone;
         }
