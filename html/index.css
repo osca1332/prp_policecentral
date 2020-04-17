@@ -32,6 +32,7 @@ body {
 .typesearch {
   width: 50%;
   float: left;
+  padding-bottom: 20px;
 }
 
 .psearch{
@@ -40,7 +41,6 @@ body {
 }
 
 .plate {
-  clear: both;
   position: absolute;
   height: 100%;
   width: 100%;
@@ -49,8 +49,6 @@ body {
 }
 
 .identity {
-  position: relative;
-  padding-top: 85px;
 }
 
 .identity input {
