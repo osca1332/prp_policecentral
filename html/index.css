@@ -11,166 +11,92 @@ body {
     width: 1024px;
     position: relative;
     margin: 1% auto;
+    background: #111;
 }
 
-
-#tjenestenr {
-    font-size: 30px;
-    color: white;
-    font-family: Politi-Bold,sans-serif;
-    font-weight: 700;
-    padding-top: 36.5px;
-    padding-right: 80px;
-}
-
-
-.headerLogoDanishLanguage {
-    padding-left: 80px;
-    padding-top: 34px;
-    height: 35px;
-}
-
-
-a {
-    text-decoration: none;
-    color: #d4e600;
-}
-
-
-header {
-    height: 157px;
-    width: 100%;
-}
-
-#navbar {
-    justify-content: space-between;
-    display: flex;
-    width: 100%;
-    height: 103px;
-    background: #001e3c;
-}
-
-
-.y {
+.button {
+  background-color: #333; /* Green */
+  border: none;
   color: white;
-  font-size: 20px;
-  font-weight: 200;
-}
-
-#service-bar {
-    background: #001e3c;
-    height: 54px;
-}
-
-.snav {
-    width: 50%;
-    margin: 0 auto;
-    height: 100%;
-}
-
-#service-bar ul {
-    text-align: center;
-    height: 100%;
-    padding: 20px 0;
-
-
-    
-}
-
-#service-bar ul li {
-    padding: 0 20px 0 20px;
-    display: inline;
-    font-weight: 700;
-    font-size: 12px;
-    font-family: sans-serif;
-    
-}
-
-
-#pTjek {
-    background: #244662 !important;
-    width: 100%;
-    height: 610px;
+  padding: 15px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 10px;
 
 }
 
-
-
-
-#eTjek {
-    background: blue !important;
-    display: none;
-    width: 100%;
-    height: 610px;
-}
-
-
-.identity {
-  display: none;
-  height: 500px;
-  top: 150px;
-  margin: 0 auto;
-}
-
-
-.form__group {
-  position: relative;
-  padding: 15px 0 0;
-  top: 5%;
+.typesearch {
   width: 50%;
-  margin-left: auto;
-  margin-right: auto;
+  float: left;
 }
 
-.form__field {
-  font-family: sans-serif;
+.psearch{
+  width: 50%;
+  float: left;
+}
+
+.plate {
+  clear: both;
+  position: absolute;
+  height: 100%;
   width: 100%;
-  border: 0;
-  border-bottom: 2px solid #d4e600;
-  outline: 0;
-  font-size: 1.3rem;
-  color: #fff;
-  font-weight: 200;
-  padding: 7px 0;
-  background: transparent;
-  transition: border-color 0.2s;
+  padding-top: 55px;
+  padding-left: 30px;
 }
-.form__field::placeholder {
-  color: transparent;
+
+.plate input {
+  height: 35px;
+  width: 255px;
 }
-.form__field:placeholder-shown ~ .form__label {
-  font-size: 1.3rem;
-  cursor: text;
+
+#type {
+  width: 150px;
+  height: 35px;
+  text-align: center;
+}
+
+.plate label {
+  display:block;
+  color: white;
+  position: relative;
+  padding-bottom: 5px;
+  font-weight: 800;
+}
+
+.table {
+  height: 85%;
+  width: 95%;
+  background: #222;
+  border-radius: 25px;
+  position: absolute; 
+  bottom: 20px;
+  right: 20px;
+  border: 1px solid white;
+}
+
+.button:hover {
+  background-color: #444;
+}
+
+
+.nav {
+  position: absolute;
   top: 20px;
+  left: 45px;
 }
 
-.form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #d4e600;
-}
 
-.form__field:focus {
-  padding-bottom: 6px;
-  font-weight: 700;
-  border-width: 3px;
-  border-image: linear-gradient(to right, #d4e600, #d4e600);
-  border-image-slice: 1;
-}
-.form__field:focus ~ .form__label {
-  position: absolute;
-  top: 0;
-  display: block;
-  transition: 0.2s;
-  font-size: 1rem;
-  color: #d4e600;
-  font-weight: 700;
-}
-
-/* reset input */
-.form__field:required, .form__field:invalid {
-  box-shadow: none;
+.content {
+  height: 90%;
+  width: 85%;
+  background: #222;
+  border-radius: 25px;
+  position: absolute; 
+  bottom: 5px;
+  right: 5px;
+  border: 1px solid white;
 }

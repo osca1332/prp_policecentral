@@ -6,40 +6,27 @@
 	</head>
 	<body>
 		<div class="tablet">
-			<header>
-				<div id="navbar">
-					<img class="headerLogoDanishLanguage img-responsive" src="https://politi.dk/-/media/fc4deb5679f649e7b0da81d9d3aef1c4.ashx?h=16&thn=1&w=16&db=web&hash=B42026343D96BB225BAE9BFD603AEBBFC79882F2" alt="Politi logo">
-					<h1 id="tjenestenr"></h1>
-				</div>
-				<div id="service-bar">
-					<div class="snav">
-						<ul>
-							<li id="331">
-								<a href="#" ><span class="y">[</span> Nummerplade Tjek <span class="y">]</span></a>
-							</li>
-							<li id="332">
-								<a href="#" ><span class="y">[</span> Efterlysning/Efterlyste <span class="y">]</span></a>
-							</li>
-							<li id="333">
-								<a href="#" ><span class="y">[</span> Person Tjek <span class="y">]</span></a>
-							</li>
-						</ul>
+			<div class="content">
+				<nav class="nav">
+					<button class="button nplate">Nr. Plade</button>
+					<button class="button pnum">CPR</button>
+					<button class="button pname">Navn</button>
+				</nav>
+				<div class="table">
+					<div class="plate">
+						<div class="psearch">
+							<label>Nummerplade</label>
+							<input type="text" name="nplade" id="nplate">
+						</div>
+						<div class="typesearch">
+							<label>Type</label>
+							<select id="type" name="types">
+								<option value="Personbil">Personbil</option>
+								<option value="Firmabil">Firmabil</option>
+							</select>
+						</div>
 					</div>
 				</div>
-			</header>
-			<div id="pTjek">
-				<div class="form__group field">
-				  <input type="input" class="form__field" placeholder="Name" name="name" id='name' required />
-				  <label for="name" class="form__label">Regnr.</label>
-				</div>
-
-				<div class="identity">
-					<h1 id="name">Ak, Kevin</h1>
-					<h2 id="age">25 år</h2>
-				</div>
-			</div>
-			<div id="eTjek">
-				<h1>Hello</h1>
 			</div>
 		</div>
         <script src="./index.js" type="text/javascript"></script>
