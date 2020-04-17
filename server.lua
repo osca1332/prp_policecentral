@@ -24,7 +24,7 @@ end)
 RegisterNetEvent("licenseCheck")
 AddEventHandler("licenseCheck", function(data)
 
-	local src = sourec
+	local pl = source
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE registration=@registration", {registration = data}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
@@ -38,7 +38,7 @@ AddEventHandler("licenseCheck", function(data)
             print("Alder: "..age)
             print("Telefonnr: "..phone)
     
-            TriggerClientEvent("pc:send", src, 1, identity)
+            TriggerClientEvent("pc:send", pl, 1, identity)
 
 		else
 			print("Bilen er ikke registreret!")
