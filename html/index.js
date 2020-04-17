@@ -30,7 +30,7 @@ $(function () {
             firstname = item.first;
             phone = item.phone;
             cpr = item.cpr
-            $("#nplate").val() = name;
+            document.getElementById("nplate").value = item.name;
         }
     })
     // if the person uses the escape key, it will exit the resource
