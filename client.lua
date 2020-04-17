@@ -121,7 +121,6 @@ end)
 RegisterNetEvent("pc:send")
 AddEventHandler("pc:send", function(id, data)
 	if id == 1 then
-		SetDisplay(false)
 		SendNUIMessage({
 	        type = "id",
 	        name = data.name,
