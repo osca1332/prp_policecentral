@@ -23,12 +23,11 @@ end)
 
 
 RegisterNetEvent("licenseCheck")
-AddEventHandler("licenseCheck", function(data, type)
+AddEventHandler("licenseCheck", function(data)
 
 	local src = sourec
 
 	MySQL.query("vRP/get_userbyreg", {reg = data}, function(rows, affected)
-
 		for key, value in pairs(rows[1]) do
     		local user_id = value
     		if user_id ~= nil then

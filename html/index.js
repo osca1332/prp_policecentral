@@ -45,7 +45,6 @@ $(function () {
     	if(e.keyCode == 13) {
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
     			text: $("#nplate").val(),
-                type: $("#type").val()
     		}));
             return
 	    }
