@@ -60,7 +60,7 @@ RegisterNetEvent("phoneCheck")
 AddEventHandler("phoneCheck", function(phone)
 
 	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE phone=ph", {ph = phone}, function(rows)
+	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE phone=@ph", {ph = phone}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
 			-- display identity and business
