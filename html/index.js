@@ -31,7 +31,7 @@ $(function () {
             document.getElementById("i-telf").value = item.phone;
             document.getElementById("i-cpr").value = `${item.cpr}-${item.uid}`;
             document.getElementById("i-alder").value = item.age;
-            document.getElementsByClassName("regi").innerHTML = item.record;
+            document.getElementsByClassName("regi").innerHTML += item.record;
         }
 
         if (item.type === "idn") {
