@@ -57,6 +57,10 @@ RegisterNUICallback("nameCheck", function(data)
 	TriggerServerEvent("nameCheck", tostring(data.first), tostring(data.last))
 end)
 
+RegisterNUICallback("phoneCheck", function(data)
+	TriggerServerEvent("phoneCheck", tostring(data.phone))
+end)
+
 
 
 

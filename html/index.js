@@ -58,6 +58,14 @@ $(function () {
                     first: p[0],
                     last: p[1]
                 }));
+                return
+            }
+
+            if(document.getElementById("type").value == "t") {
+                $.post('http://prp_policecentral/phoneCheck', JSON.stringify({
+                    phone: plate,
+                }));
+                return
             }
             
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
