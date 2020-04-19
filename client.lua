@@ -53,6 +53,15 @@ RegisterNUICallback("licenseCheck", function(data)
 	TriggerServerEvent("licenseCheck", tostring(data.text))
 end)
 
+RegisterNUICallback("nameCheck", function(data)
+	TriggerServerEvent("fnameCheck", tostring(data.text))
+end)
+
+RegisterNUICallback("lnameCheck", function(data)
+	TriggerServerEvent("lnameCheck", tostring(data.text))
+end)
+
+
 
 
 

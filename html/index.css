@@ -13,22 +13,6 @@ body {
     margin: 1% auto;
     background: #111;
 }
-
-.button {
-  background-color: #333; /* Green */
-  border: none;
-  color: white;
-  padding: 15px 15px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 10px;
-
-}
-
 .typesearch {
   width: 50%;
   float: left;
@@ -36,6 +20,7 @@ body {
 }
 
 .psearch{
+  padding-top: 20px;
   width: 50%;
   float: left;
 }
@@ -56,12 +41,12 @@ body {
   position: absolute; 
   bottom: 20px;
   right: 20px;
-  border: 1px solid white;
+  border: 1px solid #D4E600;
   display: none;
 }
 
 .identity input {
-  background: #333;
+  background: #008c6c;
   text-align: center;
 }
 
@@ -85,14 +70,14 @@ body {
 }
 
 .table {
-  height: 85%;
-  width: 95%;
-  background: #222;
-  border-radius: 25px;
+  height: 95%;
+  width: auto;
+  left: 5px;
+  background: black;
   position: absolute; 
-  bottom: 20px;
-  right: 20px;
-  border: 1px solid white;
+  bottom: 5px;
+  right: 5px;
+  border: 1px solid #D4E600;
 }
 
 .button:hover {
@@ -110,10 +95,9 @@ body {
 .content {
   height: 90%;
   width: 85%;
-  background: #222;
-  border-radius: 25px;
+  background: #f8f5f1;
+  border-radius: 5px;
   position: absolute; 
   bottom: 5px;
   right: 5px;
-  border: 1px solid white;
 }

@@ -52,7 +52,17 @@ $(function () {
     $(".plate").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
             var plate = $("#nplate").val();
-            if(document.getElementById("type").value == "c") {plate = plate.slice(0, plate.length-2);}
+            if(document.getElementById("type").value == "c") {
+                $.post('http://prp_policecentral/nameCheck', JSON.stringify({
+                    text: plate,
+                }));
+            }
+
+            if(document.getElementById("type").value == "l") {
+                $.post('http://prp_policecentral/lnameCheck', JSON.stringify({
+                    text: plate,
+                }));
+            }
             
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
     			text: plate,
