@@ -53,7 +53,7 @@ AddEventHandler("nameCheck", function(fname, lname)
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
 				record = rows[1]
 			end)
-    
+    		print(record)
             TriggerClientEvent("pc:send", pl, 1, identity, record)
 
 		else
