@@ -51,7 +51,7 @@ RegisterNetEvent("nameCheck")
 AddEventHandler("nameCheck", function(fname, lname)
 
 	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE firstname=@first AND name=@last", {first = fname, last=lname}, function(rows)
+	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE UPPER(firstname)=@first AND UPPER(name)=@last", {first = string.upper(fname), last= string.upper(lname)}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
 			-- display identity and business
