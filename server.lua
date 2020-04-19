@@ -47,34 +47,11 @@ AddEventHandler("licenseCheck", function(data)
 	end)
 end)
 
-RegisterNetEvent("fnameCheck")
-AddEventHandler("fnameCheck", function(data)
+RegisterNetEvent("nameCheck")
+AddEventHandler("nameCheck", function(fname, lname)
 
 	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE firtname=@first", {first = data}, function(rows)
-		local identity = rows[1]
-		if identity ~= nil then 
-			-- display identity and business
-            local name = identity.name
-            local firstname = identity.firstname
-            local age = identity.age.. " år"
-            local phone = identity.phone
-            local registration = identity.registration
-    
-            TriggerClientEvent("pc:send", pl, 1, identity)
-
-		else
-			print("Bilen er ikke registreret!")
-			TriggerClientEvent("pc:send", pl, -1, identity)
-		end
-	end)
-end)
-
-RegisterNetEvent("lnameCheck")
-AddEventHandler("lnameCheck", function(data)
-
-	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE name=@last", {last = data}, function(rows)
+	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE firstname=@first AND name=@last", {first = fname, last=lname}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
 			-- display identity and business

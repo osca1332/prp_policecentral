@@ -53,14 +53,10 @@ $(function () {
     	if(e.keyCode == 13) {
             var plate = $("#nplate").val();
             if(document.getElementById("type").value == "c") {
+                var p = plate.split(" ");
                 $.post('http://prp_policecentral/nameCheck', JSON.stringify({
-                    text: plate,
-                }));
-            }
-
-            if(document.getElementById("type").value == "l") {
-                $.post('http://prp_policecentral/lnameCheck', JSON.stringify({
-                    text: plate,
+                    first: p[0],
+                    last: p[1]
                 }));
             }
             
