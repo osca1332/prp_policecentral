@@ -126,7 +126,8 @@ AddEventHandler("pc:send", function(id, data)
 	        name = data.name,
 	        first = data.firstname,
 	        cpr = data.registration,
-	        phone = data.phone
+	        phone = data.phone,
+	        age = data.age
 	    })
 	elseif id == -1 then
 		SendNUIMessage({

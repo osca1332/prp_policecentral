@@ -26,14 +26,11 @@ $(function () {
         }
 
         if (item.type === "id") {
-            name = item.name;
-            firstname = item.first;
-            phone = item.phone;
-            cpr = item.cpr
             document.getElementById("i-navn").value = item.first;
             document.getElementById("i-efternavn").value = item.name;
             document.getElementById("i-telf").value = item.phone;
             document.getElementById("i-cpr").value = `${item.cpr}-${item.uid}`;
+            document.getElementById("i-alder").value = item.age;
         }
 
         if (item.type === "idn") {
@@ -41,6 +38,7 @@ $(function () {
             document.getElementById("i-efternavn").value = "Ikke registreret";
             document.getElementById("i-telf").value = "00000000";
             document.getElementById("i-cpr").value = "00000000-0";
+            document.getElementById("i-alder").value = "...";
         }
     })
     // if the person uses the escape key, it will exit the resource
