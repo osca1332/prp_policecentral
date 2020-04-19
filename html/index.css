@@ -11,7 +11,8 @@ body {
     width: 1024px;
     position: relative;
     margin: 1% auto;
-    background: #111;
+    background: url("https://docplayer.dk/docs-images/91/107379944/images/1-0.jpg") no-repeat;
+    background-size: cover;
 }
 .typesearch {
   width: 50%;
@@ -23,6 +24,17 @@ body {
   padding-top: 20px;
   width: 50%;
   float: left;
+}
+
+.regi {
+  padding-top: 50px;
+  color:white;
+  font-family: sans-serif;
+  line-height: 25px;
+  height: 400px;
+  width: 100%;
+  overflow: scroll;
+  display: inline-block;
 }
 
 .plate {

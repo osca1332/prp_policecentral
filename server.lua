@@ -8,6 +8,8 @@ ASclient = Tunnel.getInterface("prp_policecentral","prp_policecentral")
 Tunnel.bindInterface("prp_policecentral",vRPas)
 local lang = vRP.lang
 
+local record = nil
+
 
 
 
@@ -28,13 +30,15 @@ AddEventHandler("licenseCheck", function(data)
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE registration=@registration", {registration = data}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
-			-- display identity and business
+			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
+				record = rows[1]
+			end)
     
-            TriggerClientEvent("pc:send", pl, 1, identity)
+            TriggerClientEvent("pc:send", pl, 1, identity, record)
 
 		else
 			print("Bilen er ikke registreret!")
-			TriggerClientEvent("pc:send", pl, -1, identity)
+			TriggerClientEvent("pc:send", pl, -1, identity, reocrd)
 		end
 	end)
 end)
@@ -46,12 +50,14 @@ AddEventHandler("nameCheck", function(fname, lname)
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE UPPER(firstname)=UPPER(@first) AND UPPER(name)=UPPER(@last)", {first = fname, last= lname}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
-			-- display identity and business
+			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
+				record = rows[1]
+			end)
     
-            TriggerClientEvent("pc:send", pl, 1, identity)
+            TriggerClientEvent("pc:send", pl, 1, identity, record)
 
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity)
+			TriggerClientEvent("pc:send", pl, -1, identity, record)
 		end
 	end)
 end)
@@ -63,17 +69,14 @@ AddEventHandler("phoneCheck", function(phone)
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE phone=@ph", {ph = phone}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then 
-			-- display identity and business
-            local name = identity.name
-            local firstname = identity.firstname
-            local age = identity.age.. " år"
-            local phone = identity.phone
-            local registration = identity.registration
+			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
+				record = rows[1]
+			end)
     
-            TriggerClientEvent("pc:send", pl, 1, identity)
+            TriggerClientEvent("pc:send", pl, 1, identity, record)
 
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity)
+			TriggerClientEvent("pc:send", pl, -1, identity, record)
 		end
 	end)
 end)
