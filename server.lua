@@ -101,6 +101,7 @@ AddEventHandler("nameCheck", function(fname, lname)
 					temp.license = "Nej"
 				end
 
+				print(dmv)
                 
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
