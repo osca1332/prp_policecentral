@@ -47,15 +47,14 @@ AddEventHandler("licenseCheck", function(data)
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
 				if rows[1] ~= nil then
-            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
+            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue, fetchLicense(identity.user_id))
             	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "...")
+            		TriggerClientEvent("pc:send", pl, 1, identity, "...",fetchLicense(identity.user_id))
             	end
             end)
 
 		else
-			print("Bilen er ikke registreret!")
-			TriggerClientEvent("pc:send", pl, -1, identity, reocrd)
+			TriggerClientEvent("pc:send", pl, -1, identity, reocrd, "...")
 		end
 	end)
 end)
@@ -69,14 +68,14 @@ AddEventHandler("nameCheck", function(fname, lname)
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
 				if rows[1] ~= nil then
-            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
+            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue, fetchLicense(identity.user_id))
             	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "...")
+            		TriggerClientEvent("pc:send", pl, 1, identity, "...", fetchLicense(identity.user_id))
             	end
             end)
 
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity, record)
+			TriggerClientEvent("pc:send", pl, -1, identity, record, "...")
 		end
 	end)
 end)
@@ -92,12 +91,12 @@ AddEventHandler("phoneCheck", function(phone)
 				if rows[1] ~= nil then
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "...")
+            		TriggerClientEvent("pc:send", pl, 1, identity, "...", fetchLicense(identity.user_id))
             	end
             end)
 
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity, record)
+			TriggerClientEvent("pc:send", pl, -1, identity, record, "...")
 		end
 	end)
 end)
