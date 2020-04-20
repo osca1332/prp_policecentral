@@ -25,7 +25,7 @@ end)
 function fetchLicense(user_id)
 	local dmv
 	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
-		local license = rows[1]
+		local license = rows[1].DmvTest
 		print(license)
 		
 	end)
@@ -98,7 +98,7 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
               	}	
               	local dli = fetchLicense(identity.user_id)
-              	print(dli)
+              	print("Variable: "..dli)
                 if dli == "3" then
                 	temp.license = "Ja"
                 else
