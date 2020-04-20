@@ -34,7 +34,7 @@ AddEventHandler("licenseCheck", function(data)
 				if rows[1] ~= nil then
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            		TriggerClientEvent("pc:send", pl, 1, identity, "...")
             	end
             end)
 
@@ -56,7 +56,7 @@ AddEventHandler("nameCheck", function(fname, lname)
 				if rows[1] ~= nil then
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            		TriggerClientEvent("pc:send", pl, 1, identity, "...")
             	end
             end)
 
@@ -77,7 +77,7 @@ AddEventHandler("phoneCheck", function(phone)
 				if rows[1] ~= nil then
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            		TriggerClientEvent("pc:send", pl, 1, identity, "...")
             	end
             end)
 
