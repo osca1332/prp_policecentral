@@ -91,11 +91,13 @@ AddEventHandler("nameCheck", function(fname, lname)
               	}
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
 					print(rows[1].DmvTest)
-					--[[if rows[1].DmvTest == 3 then
+					if rows[1].DmvTest == 3 then
+						print("Halløj")
 	                	temp.license = "Ja"
 	                else
+	                	print("ÆØv")
 	                	temp.license = "Nej"
-	                end]]
+	                end
 				end)
 
                 
