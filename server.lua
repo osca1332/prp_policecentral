@@ -91,8 +91,8 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
               	}
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
-					local dli = rows[1]
-					print(tostring(dli))	
+					local dli = rows[1].DmvTest
+					print(dli)	
 					
 				end)
                 
