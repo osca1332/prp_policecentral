@@ -63,7 +63,7 @@ body {
 }
 
 #maximize {
-  margin-top: 8px;
+  margin-top: 10px;
   height: 15px;
   width: 10px;
   border-radius: 100%;
@@ -100,12 +100,14 @@ body {
 .table {
   height: 95%;
   width: auto;
-  left: 5px;
+  left: 0px;
   background: black;
   background: url("https://docplayer.dk/docs-images/91/107379944/images/1-0.jpg") no-repeat;
   position: absolute; 
-  bottom: 5px;
-  right: 5px;
+  bottom: 0px;
+  right: 0px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .button:hover {
@@ -128,5 +130,7 @@ body {
   position: absolute; 
   bottom: 5px;
   right: 5px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 
 }
