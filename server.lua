@@ -35,6 +35,7 @@ AddEventHandler("licenseCheck", function(data)
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
             		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            	end
             end)
 
 		else
@@ -56,6 +57,7 @@ AddEventHandler("nameCheck", function(fname, lname)
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
             		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            	end
             end)
 
 		else
@@ -76,6 +78,7 @@ AddEventHandler("phoneCheck", function(phone)
             		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
             	else
             		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            	end
             end)
 
 		else
