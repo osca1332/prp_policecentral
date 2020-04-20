@@ -51,8 +51,7 @@ AddEventHandler("licenseCheck", function(data)
                   record = rec,
               	}	
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					local dli = rows[1].DmvTest	
-					if tostring(dli) == "3" then
+					if rows[1].DmvTest == 3 then
 	                	temp.license = "Ja"
 	                else
 	                	temp.license = "Nej"
@@ -91,8 +90,7 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
               	}
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					local dli = rows[1].DmvTest	
-					if tostring(dli) == "3" then
+					if rows[1].DmvTest == 3 then
 	                	temp.license = "Ja"
 	                else
 	                	temp.license = "Nej"
@@ -133,7 +131,7 @@ AddEventHandler("phoneCheck", function(phone)
                   
               	}	
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					if tostring(rows[1].DmvTest	) == "3" then
+					if rows[1].DmvTest == 3 then
 	                	temp.license = "Ja"
 	                else
 	                	temp.license = "Nej"
