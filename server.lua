@@ -31,10 +31,11 @@ AddEventHandler("licenseCheck", function(data)
 		local identity = rows[1]
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				record = rows[1]
-			end)
-    
-            TriggerClientEvent("pc:send", pl, 1, identity, record)
+				if rows[1] ~= nil then
+            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
+            	else
+            		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            end)
 
 		else
 			print("Bilen er ikke registreret!")
@@ -51,8 +52,10 @@ AddEventHandler("nameCheck", function(fname, lname)
 		local identity = rows[1]
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-			
-            	TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
+				if rows[1] ~= nil then
+            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
+            	else
+            		TriggerClientEvent("pc:send", pl, 1, identity, "")
             end)
 
 		else
@@ -69,10 +72,11 @@ AddEventHandler("phoneCheck", function(phone)
 		local identity = rows[1]
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				record = rows[1]
-			end)
-    
-            TriggerClientEvent("pc:send", pl, 1, identity, record)
+				if rows[1] ~= nil then
+            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
+            	else
+            		TriggerClientEvent("pc:send", pl, 1, identity, "")
+            end)
 
 		else
 			TriggerClientEvent("pc:send", pl, -1, identity, record)
