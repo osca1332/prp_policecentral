@@ -44,11 +44,23 @@ AddEventHandler("licenseCheck", function(data)
 		local identity = rows[1]
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				if rows[1] ~= nil then
-            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue,fetchLicense(identity.user_id))
-            	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "...",fetchLicense(identity.user_id))
-            	end
+				local rec
+                if rows[1] ~= nil then
+                  rec = rows[1].dvalue
+                else
+                  rec = "..."
+                end
+                local temp = {
+                  uid = identity.user_id,
+                  name = data.name,
+                  first = data.firstname,
+                  cpr = data.registration,
+                  phone = data.phone,
+                  age = data.age,
+                  record = rec,
+                  license = fetchLicense(identity.user_id)
+              	}	
+              	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
 		else
@@ -65,13 +77,24 @@ AddEventHandler("nameCheck", function(fname, lname)
 		local identity = rows[1]
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				if rows[1] ~= nil then
-            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue, fetchLicense(identity.user_id))
-            	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "...", fetchLicense(identity.user_id))
-            	end
+				local rec
+                if rows[1] ~= nil then
+                  rec = rows[1].dvalue
+                else
+                  rec = "..."
+                end
+                local temp = {
+                  uid = identity.user_id,
+                  name = data.name,
+                  first = data.firstname,
+                  cpr = data.registration,
+                  phone = data.phone,
+                  age = data.age,
+                  record = rec,
+                  license = fetchLicense(identity.user_id)
+              	}	
+              	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
-
 		else
 			TriggerClientEvent("pc:send", pl, -1, identity, record, fetchLicense(identity.user_id))
 		end
@@ -86,11 +109,23 @@ AddEventHandler("phoneCheck", function(phone)
 		local identity = rows[1]
 		if identity ~= nil then 
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				if rows[1] ~= nil then
-            		TriggerClientEvent("pc:send", pl, 1, identity, rows[1].dvalue)
-            	else
-            		TriggerClientEvent("pc:send", pl, 1, identity, "...", fetchLicense(identity.user_id))
-            	end
+				local rec
+                if rows[1] ~= nil then
+                  rec = rows[1].dvalue
+                else
+                  rec = "..."
+                end
+                local temp = {
+                  uid = identity.user_id,
+                  name = data.name,
+                  first = data.firstname,
+                  cpr = data.registration,
+                  phone = data.phone,
+                  age = data.age,
+                  record = rec,
+                  license = fetchLicense(identity.user_id)
+              	}	
+              	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
 		else

@@ -127,7 +127,7 @@ end)
 
 		
 RegisterNetEvent("pc:send")
-AddEventHandler("pc:send", function(id, data, rec, dmv)
+AddEventHandler("pc:send", function(id, data)
 	if id == 1 then
 		SendNUIMessage({
 	        type = "id",
@@ -137,8 +137,8 @@ AddEventHandler("pc:send", function(id, data, rec, dmv)
 	        cpr = data.registration,
 	        phone = data.phone,
 	        age = data.age,
-	        record = rec,
-	        license = dmv
+	        record = data.record,
+	        license = data.license
 	    })
 	elseif id == -1 then
 		SendNUIMessage({
