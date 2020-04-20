@@ -26,8 +26,10 @@ function fetchLicense(user_id)
 	local dmv
 	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
 		local license = rows[1].DmvTest
-		return tostring(license)
+		print(license)
+		
 	end)
+	return tostring(license)
 end
 
 
