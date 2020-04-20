@@ -92,6 +92,7 @@ AddEventHandler("nameCheck", function(fname, lname)
               	}
               	MySQL.Sync.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
 					if rows[1].DmvTest == 3 then
+						print(rows[1].DmvTest)
 						temp.license = "Ja"
 					elseif rows[1].DmvTest == 1 or -1 then
 						temp.license = "Nej"
@@ -133,6 +134,7 @@ AddEventHandler("phoneCheck", function(phone)
               	}	
               	MySQL.Sync.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
 					if rows[1].DmvTest == 3 then
+
 						temp.license = "Ja"
 					elseif rows[1].DmvTest == 1 or -1 then
 						temp.license = "Nej"
