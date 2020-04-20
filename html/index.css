@@ -11,7 +11,7 @@ body {
     width: 1024px;
     position: relative;
     margin: 1% auto;
-    background: url("https://docplayer.dk/docs-images/91/107379944/images/1-0.jpg") no-repeat;
+    background-image: url(https://politi.dk:443/-/media/mediefiler/billeder/artikel-b-3000px-x-h-2000px/kriseinformation/blaa-blink.jpg);
     background-size: cover;
 }
 .typesearch {
@@ -21,7 +21,7 @@ body {
 }
 
 .psearch{
-  padding-top: 20px;
+  padding-top: 0px;
   width: 50%;
   float: left;
 }
@@ -44,32 +44,49 @@ body {
   padding-left: 30px;
 }
 
-.table2 {
-  height: 85%;
-  width: 95%;
-  background: #222;
-  border-radius: 25px;
-  position: absolute; 
-  bottom: 20px;
-  right: 20px;
-  border: 1px solid #D4E600;
-  display: none;
+#cross {
+  margin-top: 5px;
+  margin-left: 10px;
+  height: 15px;
+  width: 10px;
+  border-radius: 100%;
+  background: rgb(255,90,81);
+}
+
+#minimize {
+  margin-top: 5px;
+
+  height: 15px;
+  width: 10px;
+  border-radius: 100%;
+  background: rgb(231,192,41);
+}
+
+#maximize {
+  margin-top: 8px;
+  height: 15px;
+  width: 10px;
+  border-radius: 100%;
+  background: rgb(83,194,44);
 }
 
 .identity input {
-  background: #008c6c;
+  background: rgb(0,36,70) !important;
   text-align: center;
 }
 
 .plate input {
   height: 35px;
   width: 255px;
+  background: rgb(212,230,0);
+  outline: none;
 }
 
 #type {
   width: 150px;
   height: 35px;
   text-align: center;
+  background: rgb(212,230,0);
 }
 
 .plate label {
@@ -85,10 +102,10 @@ body {
   width: auto;
   left: 5px;
   background: black;
+  background: url("https://docplayer.dk/docs-images/91/107379944/images/1-0.jpg") no-repeat;
   position: absolute; 
   bottom: 5px;
   right: 5px;
-  border: 1px solid #D4E600;
 }
 
 .button:hover {
@@ -111,4 +128,5 @@ body {
   position: absolute; 
   bottom: 5px;
   right: 5px;
+
 }

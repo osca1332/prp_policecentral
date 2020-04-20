@@ -40,6 +40,7 @@ $(function () {
             document.getElementById("i-telf").value = "00000000";
             document.getElementById("i-cpr").value = "00000000-0";
             document.getElementById("i-alder").value = "...";
+            $(".regi").html("...");
         }
     })
     // if the person uses the escape key, it will exit the resource
