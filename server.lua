@@ -28,15 +28,12 @@ function fetchLicense(user_id)
 		local license = rows[1].DmvTest
 		print(license)
 		if tostring(license) == "3" then
-			print("ja")
 			return "Ja"
 		else
-			print("nej")
 			return "Nej"
 		end
 	end)
 
-	return "..."
 end
 
 
