@@ -52,11 +52,11 @@ AddEventHandler("licenseCheck", function(data)
                 end
                 local temp = {
                   uid = identity.user_id,
-                  name = data.name,
-                  first = data.firstname,
-                  cpr = data.registration,
-                  phone = data.phone,
-                  age = data.age,
+                  name = identity.name,
+                  first = identity.firstname,
+                  cpr = identity.registration,
+                  phone = identity.phone,
+                  age = identity.age,
                   record = rec,
                   license = fetchLicense(identity.user_id)
               	}	
@@ -85,11 +85,11 @@ AddEventHandler("nameCheck", function(fname, lname)
                 end
                 local temp = {
                   uid = identity.user_id,
-                  name = data.name,
-                  first = data.firstname,
-                  cpr = data.registration,
-                  phone = data.phone,
-                  age = data.age,
+                  name = identity.name,
+                  first = identity.firstname,
+                  cpr = identity.registration,
+                  phone = identity.phone,
+                  age = identity.age,
                   record = rec,
                   license = fetchLicense(identity.user_id)
               	}	
@@ -117,11 +117,11 @@ AddEventHandler("phoneCheck", function(phone)
                 end
                 local temp = {
                   uid = identity.user_id,
-                  name = data.name,
-                  first = data.firstname,
-                  cpr = data.registration,
-                  phone = data.phone,
-                  age = data.age,
+                  name = identity.name,
+                  first = identity.firstname,
+                  cpr = identity.registration,
+                  phone = identity.phone,
+                  age = identity.age,
                   record = rec,
                   license = fetchLicense(identity.user_id)
               	}	
