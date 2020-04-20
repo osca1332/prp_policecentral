@@ -80,7 +80,7 @@ AddEventHandler("nameCheck", function(fname, lname)
                 else
                   rec = "..."
                 end
-                local temp = {
+                temp = {
                   uid = identity.user_id,
                   name = identity.name,
                   first = identity.firstname,
