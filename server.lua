@@ -90,18 +90,17 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
                   license = "..."
               	}
-              	local dmv = MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					print(rows[1].DmvTest)
-					return rows[1].DmvTest
+              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
+					if rows[1].DmvTest == 3 then
+						temp.license = "Ja"
+					elseif rows[1].DmvTest == 1 or -1 then
+						temp.license = "Nej"
+					end
 				end)
 
-				if dmv == 3 then
-					temp.license = "Ja"
-				elseif dmv == 1 or -1 then
-					temp.license = "Nej"
-				end
+				
 
-				print(dmv)
+				print(temp.license)
                 
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
