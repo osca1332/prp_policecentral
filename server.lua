@@ -96,6 +96,7 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
               	}	
               	local dli = fetchLicense(identity.user_id)
+              	print(dli)
                 if dli == "3" then
                 	temp.license = "Ja"
                 else
@@ -134,6 +135,7 @@ AddEventHandler("phoneCheck", function(phone)
                   
               	}	
               	local dli = fetchLicense(identity.user_id)
+              	print(dli)
                 if dli == "3" then
                 	temp.license = "Ja"
                 else
