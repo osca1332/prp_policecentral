@@ -74,6 +74,8 @@ body {
 
 .identity input {
   background: rgb(0,36,70) !important;
+  border: 1px solid rgb(212,230,0) !important;
+  color: rgb(212,230,0) !important;
   text-align: center;
 }
 
@@ -81,6 +83,8 @@ body {
   height: 35px;
   width: 255px;
   background: rgb(212,230,0);
+  border: 1px solid rgb(0,36,70);
+  font-family: "Courier New", Courier, monospace;
   outline: none;
 }
 
@@ -97,6 +101,7 @@ body {
   position: relative;
   padding-bottom: 2px;
   font-weight: 800;
+  font-family: "Courier New", Courier, monospace;
 }
 
 .table {
