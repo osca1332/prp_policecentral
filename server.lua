@@ -93,20 +93,11 @@ AddEventHandler("nameCheck", function(fname, lname)
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
 					print(rows[1].DmvTest)
 					if rows[1].DmvTest == 3 then
-						dlice = true
-						print("Halløj")
-	                	
+						temp.license = "Ja"	                	
 	                else
-	                	dlice = false
-	                	print("ÆØv")
+	                	temp.license = "Nej"
 	                end
 				end)
-
-				if dlice == true then
-					temp.license = "Ja"
-				else 
-					temp.license = "Nej"
-				end
 
                 
               	TriggerClientEvent("pc:send", pl, 1, temp)
