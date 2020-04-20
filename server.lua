@@ -97,7 +97,7 @@ AddEventHandler("nameCheck", function(fname, lname)
 
 				if dmv == 3 then
 					temp.license = "Ja"
-				else
+				elseif dmv == 1 or -1 then
 					temp.license = "Nej"
 				end
 
