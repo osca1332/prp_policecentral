@@ -22,11 +22,6 @@ AddEventHandler("pc:perm", function()
 end)
 
 
-function fetchLicense(user_id)
-	return MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
-		return rows[1].DmvTest	
-	end)
-end
 
 
 RegisterNetEvent("licenseCheck")
@@ -55,12 +50,14 @@ AddEventHandler("licenseCheck", function(data)
                   age = identity.age,
                   record = rec,
               	}	
-              	local dli = fetchLicense(identity.user_id)
-                if tostring(dli) == "3" then
-                	temp.license = "Ja"
-                else
-                	temp.license = "Nej"
-                end
+              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
+					local dli = rows[1].DmvTest	
+					if tostring(dli) == "3" then
+	                	temp.license = "Ja"
+	                else
+	                	temp.license = "Nej"
+	                end
+				end)
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
@@ -92,14 +89,16 @@ AddEventHandler("nameCheck", function(fname, lname)
                   phone = identity.phone,
                   age = identity.age,
                   record = rec,
-              	}	
-              	local dli = fetchLicense(identity.user_id)
-              	print(tostring(dli))
-                if tostring(dli) == "3" then
-                	temp.license = "Ja"
-                else
-                	temp.license = "Nej"
-                end
+              	}
+              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
+					local dli = rows[1].DmvTest	
+					if tostring(dli) == "3" then
+	                	temp.license = "Ja"
+	                else
+	                	temp.license = "Nej"
+	                end
+				end)
+                
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 		else
@@ -132,13 +131,14 @@ AddEventHandler("phoneCheck", function(phone)
                   record = rec,
                   
               	}	
-              	local dli = fetchLicense(identity.user_id)
-              	print(dli)
-                if dli == "3" then
-                	temp.license = "Ja"
-                else
-                	temp.license = "Nej"
-                end
+              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
+					local dli = rows[1].DmvTest	
+					if tostring(dli) == "3" then
+	                	temp.license = "Ja"
+	                else
+	                	temp.license = "Nej"
+	                end
+				end)
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
