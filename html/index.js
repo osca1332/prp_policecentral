@@ -31,7 +31,7 @@ $(function () {
             document.getElementById("i-telf").value = item.phone;
             document.getElementById("i-cpr").value = `${item.cpr}-${item.uid}`;
             document.getElementById("i-alder").value = item.age;
-            document.getElementById("i-dmv").value = item.dmv;
+            document.getElementById("i-dmv").value = item.kkort;
             $(".regi").html(item.record);
         }
 
@@ -41,7 +41,7 @@ $(function () {
             document.getElementById("i-telf").value = "00000000";
             document.getElementById("i-cpr").value = "00000000-0";
             document.getElementById("i-alder").value = "...";
-            document.getElementById("i-dmv").value = item.dmv;
+            document.getElementById("i-dmv").value = item.kkort;
             $(".regi").html("...");
         }
     })
