@@ -77,19 +77,10 @@ $(function () {
 	    }
 	});
 
-    $(".nplate").click(function() {
-        $("table").show();
-        $("table2").hide();
+    $("#cross").click(function() {
+        $.post('http://prp_policecentral/exit', JSON.stringify({}));
+        return
     });
 
-    $(".pname").click(function() {
-        $("table2").show();
-        $("table").hide();
-    });
-
-    function pname()
-    {
-        $("table2").show();
-        $("table").hide();
-    }
+    
 })
