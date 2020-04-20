@@ -52,6 +52,9 @@ AddEventHandler("licenseCheck", function(data)
                 else
                   rec = "..."
                 end
+
+
+
                 local temp = {
                   uid = identity.user_id,
                   name = identity.name,
@@ -60,8 +63,13 @@ AddEventHandler("licenseCheck", function(data)
                   phone = identity.phone,
                   age = identity.age,
                   record = rec,
-                  license = fetchLicense(identity.user_id)
               	}	
+              	local dli = fetchLicense(identity.user_id)
+                if dli == "Ja" then
+                	temp.license = "Ja"
+                else
+                	temp.license = "Nej"
+                end
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
@@ -93,8 +101,13 @@ AddEventHandler("nameCheck", function(fname, lname)
                   phone = identity.phone,
                   age = identity.age,
                   record = rec,
-                  license = fetchLicense(identity.user_id)
               	}	
+              	local dli = fetchLicense(identity.user_id)
+                if dli == "Ja" then
+                	temp.license = "Ja"
+                else
+                	temp.license = "Nej"
+                end
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 		else
@@ -125,8 +138,14 @@ AddEventHandler("phoneCheck", function(phone)
                   phone = identity.phone,
                   age = identity.age,
                   record = rec,
-                  license = fetchLicense(identity.user_id)
+                  
               	}	
+              	local dli = fetchLicense(identity.user_id)
+                if dli == "Ja" then
+                	temp.license = "Ja"
+                else
+                	temp.license = "Nej"
+                end
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
