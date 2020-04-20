@@ -131,7 +131,7 @@ AddEventHandler("pc:send", function(id, data)
 	if id == 1 then
 		SendNUIMessage({
 	        type = "id",
-	        uid = data.user_id,
+	        uid = data.uid,
 	        name = data.name,
 	        first = data.first,
 	        cpr = data.cpr,

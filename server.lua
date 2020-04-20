@@ -26,14 +26,7 @@ function fetchLicense(user_id)
 	local dmv
 	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
 		local license = rows[1].DmvTest
-		print(license)
-		if tostring(license) == "3" then
-			dmv = "Ja"
-			return dmv
-		else
-			dmv = "Nej"
-			return dmv
-		end
+		return tostring(license)
 	end)
 end
 
@@ -65,7 +58,7 @@ AddEventHandler("licenseCheck", function(data)
                   record = rec,
               	}	
               	local dli = fetchLicense(identity.user_id)
-                if dli == "Ja" then
+                if dli == "3" then
                 	temp.license = "Ja"
                 else
                 	temp.license = "Nej"
@@ -103,7 +96,7 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
               	}	
               	local dli = fetchLicense(identity.user_id)
-                if dli == "Ja" then
+                if dli == "3" then
                 	temp.license = "Ja"
                 else
                 	temp.license = "Nej"
@@ -141,7 +134,7 @@ AddEventHandler("phoneCheck", function(phone)
                   
               	}	
               	local dli = fetchLicense(identity.user_id)
-                if dli == "Ja" then
+                if dli == "3" then
                 	temp.license = "Ja"
                 else
                 	temp.license = "Nej"
