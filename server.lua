@@ -50,13 +50,16 @@ AddEventHandler("licenseCheck", function(data)
                   age = identity.age,
                   record = rec,
               	}	
-              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
+              	local dmv
+              	MySQL.Sync.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
 					if rows[1].DmvTest == 3 then
-	                	temp.license = "Ja"
-	                else
-	                	temp.license = "Nej"
-	                end
+						dmv = "Ja"
+					elseif rows[1].DmvTest == 1 or -1 then
+						dmv = "Nej"
+					end
 				end)
+
+				temp.license = dmv
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
@@ -80,7 +83,7 @@ AddEventHandler("nameCheck", function(fname, lname)
                 else
                   rec = "..."
                 end
-                temp = {
+                local temp = {
                   uid = identity.user_id,
                   name = identity.name,
                   first = identity.firstname,
@@ -90,17 +93,16 @@ AddEventHandler("nameCheck", function(fname, lname)
                   record = rec,
                   license = "..."
               	}
-              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
+              	local dmv
+              	MySQL.Sync.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
 					if rows[1].DmvTest == 3 then
-						temp.license = "Ja"
+						dmv = "Ja"
 					elseif rows[1].DmvTest == 1 or -1 then
-						temp.license = "Nej"
+						dmv = "Nej"
 					end
 				end)
 
-				
-
-				print(temp.license)
+				temp.license = dmv
                 
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
@@ -134,13 +136,16 @@ AddEventHandler("phoneCheck", function(phone)
                   record = rec,
                   
               	}	
-              	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					if tostring(rows[1].DmvTest) == "3" then
-	                	temp.license = "Ja"
-	                else
-	                	temp.license = "Nej"
-	                end
+              	local dmv
+              	MySQL.Sync.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
+					if rows[1].DmvTest == 3 then
+						dmv = "Ja"
+					elseif rows[1].DmvTest == 1 or -1 then
+						dmv = "Nej"
+					end
 				end)
+
+				temp.license = dmv
 
 
               	TriggerClientEvent("pc:send", pl, 1, temp)
