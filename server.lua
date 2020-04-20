@@ -26,6 +26,7 @@ function fetchLicense(user_id)
 
 	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=user_id}, function(rows)
 		local license = rows[1].DmvTest
+		print(license)
 		if license == "3" then
 			print("ja")
 			return "Ja"
