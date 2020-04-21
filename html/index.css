@@ -59,6 +59,10 @@ body {
   background: rgb(255,90,81);
 }
 
+#cross:hover {
+  background: rgb(162,7,6)
+}
+
 #minimize {
   margin-top: 5px;
 
