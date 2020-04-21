@@ -1,13 +1,17 @@
+--[[
+    __             _                                 __
+   / /   ____ _   (_)____ _ ____ _ ____ _ _____ ____/ /
+  / /   / __ `/  / // __ `// __ `// __ `// ___// __  /
+ / /___/ /_/ /  / // /_/ // /_/ // /_/ // /   / /_/ /
+/_____/\__,_/__/ / \__, / \__,_/ \__,_//_/    \__,_/
+            /___/ /____/
 
+Det her er udviklet af Oscar Lajgaard, og udviklet for ProvinsenRP.
+Må ikke kopieres. Copyright 2020.
 
+Version: BETA-0.1
 
-
-
-
-
-
-
-
+]]
 
 vRPbsT = {}
 Tunnel.bindInterface("prp_policecentral",vRPbsT)
@@ -73,10 +77,10 @@ Citizen.CreateThread(function()
     while display == true do
         Citizen.Wait(0)
         -- https://runtime.fivem.net/doc/natives/#_0xFE99B66D079CF6BC
-        --[[ 
-            inputGroup -- integer , 
-	        control --integer , 
-            disable -- boolean 
+        --[[
+            inputGroup -- integer ,
+	        control --integer ,
+            disable -- boolean
         ]]
         DisableControlAction(0, 1, display) -- LookLeftRight
         DisableControlAction(0, 2, display) -- LookUpDown
@@ -125,7 +129,7 @@ AddEventHandler("pc:open", function()
 end)
 
 
-		
+
 RegisterNetEvent("pc:send")
 AddEventHandler("pc:send", function(id, data)
 	if id == 1 then

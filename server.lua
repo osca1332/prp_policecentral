@@ -30,7 +30,7 @@ AddEventHandler("licenseCheck", function(data)
 	local pl = source
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE registration=@registration", {registration = data}, function(rows)
 		local identity = rows[1]
-		if identity ~= nil then 
+		if identity ~= nil then
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
 				local rec
                 if rows[1] ~= nil then
@@ -49,14 +49,14 @@ AddEventHandler("licenseCheck", function(data)
                   phone = identity.phone,
                   age = identity.age,
                   record = rec,
-              	}	
+              	}
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					if rows[1].DmvTest == 3 then
-						temp.license = "Ja"
-					elseif rows[1].DmvTest == 1 or -1 then
-						temp.license = "Nej"
-					end
-				end)
+									if rows[1].DmvTest == 3 then
+										temp.license = "Ja"
+									elseif rows[1].DmvTest == 1 or -1 then
+										temp.license = "Nej"
+									end
+								end)
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 
@@ -72,7 +72,7 @@ AddEventHandler("nameCheck", function(fname, lname)
 	local pl = source
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE UPPER(firstname)=UPPER(@first) AND UPPER(name)=UPPER(@last)", {first = fname, last= lname}, function(rows)
 		local identity = rows[1]
-		if identity ~= nil then 
+		if identity ~= nil then
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
 				local rec
                 if rows[1] ~= nil then
@@ -91,14 +91,14 @@ AddEventHandler("nameCheck", function(fname, lname)
                   license = "..."
               	}
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					if rows[1].DmvTest == 3 then
-						temp.license = "Ja"
-					elseif rows[1].DmvTest == 1 or -1 then
-						temp.license = "Nej"
-					end
-				end)
+									if rows[1].DmvTest == 3 then
+										temp.license = "Ja"
+									elseif rows[1].DmvTest == 1 or -1 then
+										temp.license = "Nej"
+									end
+								end)
 
-                
+
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 		else
@@ -113,7 +113,7 @@ AddEventHandler("phoneCheck", function(phone)
 	local pl = source
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE phone=@ph", {ph = phone}, function(rows)
 		local identity = rows[1]
-		if identity ~= nil then 
+		if identity ~= nil then
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
 				local rec
                 if rows[1] ~= nil then
@@ -129,15 +129,15 @@ AddEventHandler("phoneCheck", function(phone)
                   phone = identity.phone,
                   age = identity.age,
                   record = rec,
-                  
-              	}	
+
+              	}
               	MySQL.Async.fetchAll("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=identity.user_id}, function(rows)
-					if rows[1].DmvTest == 3 then
-						temp.license = "Ja"
-					elseif rows[1].DmvTest == 1 or -1 then
-						temp.license = "Nej"
-					end
-				end)
+									if rows[1].DmvTest == 3 then
+										temp.license = "Ja"
+									elseif rows[1].DmvTest == 1 or -1 then
+										temp.license = "Nej"
+									end
+								end)
 
 
               	TriggerClientEvent("pc:send", pl, 1, temp)
