@@ -61,7 +61,7 @@ AddEventHandler("licenseCheck", function(data)
             end)
 
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity, reocrd, "...")
+			TriggerClientEvent("pc:send", pl, -1, temp)
 		end
 	end)
 end)
@@ -102,7 +102,7 @@ AddEventHandler("nameCheck", function(fname, lname)
               	TriggerClientEvent("pc:send", pl, 1, temp)
             end)
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity, record, "...")
+			TriggerClientEvent("pc:send", pl, -1, temp)
 		end
 	end)
 end)
@@ -144,7 +144,7 @@ AddEventHandler("phoneCheck", function(phone)
             end)
 
 		else
-			TriggerClientEvent("pc:send", pl, -1, identity, record, "...")
+			TriggerClientEvent("pc:send", pl, -1, temp)
 		end
 	end)
 end)
