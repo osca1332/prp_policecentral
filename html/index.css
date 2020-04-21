@@ -26,6 +26,10 @@ body {
   float: left;
 }
 
+.psearch input {
+  padding-left: 10px;
+}
+
 .regi {
   margin-top: 50px;
   padding: 10px 15px;
@@ -110,7 +114,7 @@ body {
   left: 0px;
   background: black;
   background: url("https://docplayer.dk/docs-images/91/107379944/images/1-0.jpg") no-repeat;
-  position: absolute; 
+  position: absolute;
   bottom: 0px;
   right: 0px;
   border-bottom-left-radius: 10px;
@@ -134,7 +138,7 @@ body {
   width: 85%;
   background: #f8f5f1;
   border-radius: 5px;
-  position: absolute; 
+  position: absolute;
   bottom: 5px;
   right: 5px;
   border-bottom-left-radius: 10px;
