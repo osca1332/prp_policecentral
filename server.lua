@@ -67,10 +67,10 @@ AddEventHandler("licenseCheck", function(data)
 end)
 
 RegisterNetEvent("nameCheck")
-AddEventHandler("nameCheck", function(fname, lname)
+AddEventHandler("nameCheck", function(name)
 
 	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE UPPER(firstname)=UPPER(@first) AND UPPER(name)=UPPER(@last)", {first = fname, last= lname}, function(rows)
+	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE UPPER(firstname)=UPPER(@first) AND UPPER(name)=UPPER(@last)", {first = name.first, last= name.last}, function(rows)
 		local identity = rows[1]
 		if identity ~= nil then
 			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)

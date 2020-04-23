@@ -58,7 +58,7 @@ RegisterNUICallback("licenseCheck", function(data)
 end)
 
 RegisterNUICallback("nameCheck", function(data)
-	TriggerServerEvent("nameCheck", tostring(data.first), tostring(data.last))
+	TriggerServerEvent("nameCheck", data)
 end)
 
 RegisterNUICallback("phoneCheck", function(data)
