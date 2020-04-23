@@ -57,7 +57,7 @@ $(function () {
     	if(e.keyCode == 13) {
             var plate = $("#nplate").val();
             if(document.getElementById("type").value == "c") {
-                var p = plate.split("_");
+                var p = plate.split(" ");
                 $.post('http://prp_policecentral/nameCheck', JSON.stringify({
                     first: p[0],
                     last: p[1]
