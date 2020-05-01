@@ -71,7 +71,7 @@ $(function () {
                 }));
                 return
             }
-            
+
     		$.post('http://prp_policecentral/licenseCheck', JSON.stringify({
     			text: plate,
     		}));
@@ -84,5 +84,5 @@ $(function () {
         return
     });
 
-    
+
 })
