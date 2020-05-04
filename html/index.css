@@ -13,14 +13,22 @@ body {
     margin: 1% auto;
 }
 .typesearch {
-  width: 50%;
+  width: 30%;
   float: left;
   padding-bottom: 20px;
 }
 
+::placeholder {
+  color: rgb(0,36,70);
+}
+
+#type {
+  font-size: 14px;
+}
+
 .psearch{
   padding-top: 0px;
-  width: 50%;
+  width: 30%;
   float: left;
 }
 
@@ -61,8 +69,11 @@ body {
   width: 255px;
   background: rgb(212,230,0);
   border: 1px solid rgb(0,36,70);
+  font-weight: 700;
+  font-size: 14px;
   font-family: "Courier New", Courier, monospace;
   outline: none;
+  color: rgb(0,36,70);
 }
 
 #type {
