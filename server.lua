@@ -41,22 +41,35 @@ AddEventHandler("licenseCheck", function(data)
 
 
 
-        local temp = {
-          uid = identity.user_id,
-          name = identity.name,
-          first = identity.firstname,
-          cpr = identity.registration,
-          phone = identity.phone,
-          age = identity.age,
-          record = rec,
-          license = "Ja"
-      	}
-      	MySQL.Sync.fetchAll("SELECT * FROM vrp_users WHERE id = @id AND DmvTest = '1'", {uid=identity.user_id}, function(rows)
+        MySQL.Async.fetchAll("SELECT * FROM vrp_users WHERE id = @uid", {uid=identity.user_id}, function(rows)
+          
+          temp = {
+            uid = identity.user_id,
+            name = identity.name,
+            first = identity.firstname,
+            cpr = identity.registration,
+            phone = identity.phone,
+            age = identity.age,
+            record = rec,
+            license = "..."
+          }
+
+
           if #rows > 0 then
+            temp.license = rows[1].DmvTest
+          else
+            temp.license = 1
+          end
+            
+          if temp.license == 3 then
+            temp.license = "Ja"
+          elseif temp.license == 2 then
+            temp.license = "Frataget"
+          else
             temp.license = "Nej"
           end
-				end)
-      	TriggerClientEvent("pc:send", pl, 1, temp)
+          TriggerClientEvent("pc:send", pl, 1, temp)
+        end)
       end)
 
 		else
@@ -79,22 +92,35 @@ AddEventHandler("nameCheck", function(name)
         else
           rec = "..."
         end
-        local temp = {
-          uid = identity.user_id,
-          name = identity.name,
-          first = identity.firstname,
-          cpr = identity.registration,
-          phone = identity.phone,
-          age = identity.age,
-          record = rec,
-          license = "Ja"
-      	}
-        MySQL.Sync.fetchAll("SELECT * FROM vrp_users WHERE id = @id AND DmvTest = '1'", {uid=identity.user_id}, function(rows)
+        MySQL.Async.fetchAll("SELECT * FROM vrp_users WHERE id = @uid", {uid=identity.user_id}, function(rows)
+          
+          temp = {
+            uid = identity.user_id,
+            name = identity.name,
+            first = identity.firstname,
+            cpr = identity.registration,
+            phone = identity.phone,
+            age = identity.age,
+            record = rec,
+            license = "..."
+          }
+
+
           if #rows > 0 then
+            temp.license = rows[1].DmvTest
+          else
+            temp.license = 1
+          end
+            
+          if temp.license == 3 then
+            temp.license = "Ja"
+          elseif temp.license == 2 then
+            temp.license = "Frataget"
+          else
             temp.license = "Nej"
           end
+          TriggerClientEvent("pc:send", pl, 1, temp)
         end)
-      	TriggerClientEvent("pc:send", pl, 1, temp)
     end)
 		else
 			TriggerClientEvent("pc:send", pl, -1, temp)
@@ -116,23 +142,37 @@ AddEventHandler("phoneCheck", function(phone)
         else
           rec = "..."
         end
-        temp = {
-          uid = identity.user_id,
-          name = identity.name,
-          first = identity.firstname,
-          cpr = identity.registration,
-          phone = identity.phone,
-          age = identity.age,
-          record = rec,
-          license = "Ja"
+        
+        MySQL.Async.fetchAll("SELECT * FROM vrp_users WHERE id = @uid", {uid=identity.user_id}, function(rows)
+          
+          temp = {
+            uid = identity.user_id,
+            name = identity.name,
+            first = identity.firstname,
+            cpr = identity.registration,
+            phone = identity.phone,
+            age = identity.age,
+            record = rec,
+            license = "..."
+          }
 
-      	}
-				MySQL.Sync.fetchAll("SELECT * FROM vrp_users WHERE id = @id AND DmvTest = '1'", {uid=identity.user_id}, function(rows)
+
           if #rows > 0 then
+            temp.license = rows[1].DmvTest
+          else
+            temp.license = 1
+          end
+            
+          if temp.license == 3 then
+            temp.license = "Ja"
+          elseif temp.license == 2 then
+            temp.license = "Frataget"
+          else
             temp.license = "Nej"
           end
+          TriggerClientEvent("pc:send", pl, 1, temp)
         end)
-        TriggerClientEvent("pc:send", pl, 1, temp)
+        
       end)
 
 		else
