@@ -87,7 +87,7 @@ AddEventHandler("nameCheck", function(name)
           phone = identity.phone,
           age = identity.age,
           record = rec,
-          license = "..."
+          license = "Ja"
       	}
         MySQL.Sync.fetchAll("SELECT * FROM vrp_users WHERE id = @id AND DmvTest = '1'", {uid=identity.user_id}, function(rows)
           if #rows > 0 then
@@ -124,7 +124,7 @@ AddEventHandler("phoneCheck", function(phone)
           phone = identity.phone,
           age = identity.age,
           record = rec,
-          license = "..."
+          license = "Ja"
 
       	}
 				MySQL.Sync.fetchAll("SELECT * FROM vrp_users WHERE id = @id AND DmvTest = '1'", {uid=identity.user_id}, function(rows)
