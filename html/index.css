@@ -11,8 +11,6 @@ body {
     width: 1024px;
     position: relative;
     margin: 1% auto;
-    background-image: url(https://politi.dk:443/-/media/mediefiler/billeder/artikel-b-3000px-x-h-2000px/kriseinformation/blaa-blink.jpg);
-    background-size: cover;
 }
 .typesearch {
   width: 50%;
@@ -31,12 +29,12 @@ body {
 }
 
 .regi {
-  margin-top: 50px;
+  margin-top: 100px;
   padding: 10px 15px;
   color: white;
   font-family: sans-serif;
   line-height: 20px;
-  height: 320px;
+  height: 350px;
   width: 90%;
   display: inline-block;
   background: rgba(0,0,0,.5);
@@ -50,35 +48,6 @@ body {
   padding-left: 30px;
 }
 
-#cross {
-  margin-top: 5px;
-  margin-left: 10px;
-  height: 15px;
-  width: 10px;
-  border-radius: 100%;
-  background: rgb(255,90,81);
-}
-
-#cross:hover {
-  background: rgb(162,7,6)
-}
-
-#minimize {
-  margin-top: 5px;
-
-  height: 15px;
-  width: 10px;
-  border-radius: 100%;
-  background: rgb(231,192,41);
-}
-
-#maximize {
-  margin-top: 10px;
-  height: 15px;
-  width: 10px;
-  border-radius: 100%;
-  background: rgb(83,194,44);
-}
 
 .identity input {
   background: rgb(0,36,70) !important;
@@ -113,7 +82,7 @@ body {
 }
 
 .table {
-  height: 95%;
+  height: 100%;
   width: auto;
   left: 0px;
   background: black;
@@ -121,8 +90,6 @@ body {
   position: absolute;
   bottom: 0px;
   right: 0px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
 }
 
 .button:hover {
@@ -138,14 +105,9 @@ body {
 
 
 .content {
-  height: 90%;
-  width: 85%;
+  height: 100%;
+  width: 100%;
   background: #f8f5f1;
   border-radius: 5px;
   position: absolute;
-  bottom: 5px;
-  right: 5px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
-
 }
