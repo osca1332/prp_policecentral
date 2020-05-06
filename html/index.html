@@ -3,53 +3,22 @@
 		<link rel="stylesheet" href="reset.css" type="text/css">
         <link rel="stylesheet" href="index.css" type="text/css">
         <script src="nui://game/ui/jquery.js" type="text/javascript"></script>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 	</head>
 	<body>
 		<div class="tablet">
 			<div class="content">
 				<div class="table">
 					<div class="plate">
-						<div class="psearch" style="z-index:1000;">
-							<label>Foretag søgning</label>
-							<input type="text" name="nplade" id="nplate" placeholder="(navn, nrplade, telefonnr)">
-						</div>
-						<div class="typesearch">
-							<label>Type</label>
-							<select id="type" name="types">
-								<option value="n">Nummerplade/CPR</option>
-								<option value="c">Fornavn_Efternavn</option>
-								<option value="t">Telefon</option>
-							</select>
-						</div>
 						<div style="width: 25%; height: 100px; background: url('https://politi.dk/-/media/fc4deb5679f649e7b0da81d9d3aef1c4.ashx?h=16&thn=1&w=16&db=web&hash=B42026343D96BB225BAE9BFD603AEBBFC79882F2') no-repeat; background-size: contain; float: left;"></div>
-						<div class="identity" style="clear: both;">
-							<span style="float: left;">
-								<label>FORNAVN</label>
-								<input type="text" id="i-navn" disabled="disabled" style="width: 200px;">
-							</span>
-							<span style="float: left; padding-left: 10px;">
-								<label>EFTERNAVN</label>
-								<input type="text" id="i-efternavn" disabled="disabled" style="width: 200px;">
-							</span>
-							<span style="float: left; clear: both;margin-top: 10px;">
-								<label>TELEFON</label>
-								<input type="text" id="i-telf" disabled="disabled" style="width: 150px;">
-							</span>
-							<span style="float: left; margin-top: 10px;padding-left: 10px;">
-								<label>CPR</label>
-								<input type="text" id="i-cpr" disabled="disabled" style="width: 120px;">
-							</span>
-							<span style="float: left; padding-left: 10px;margin-top: 10px;">
-								<label>ALDER</label>
-								<input type="text" id="i-alder" disabled="disabled" style="width: 100px;">
-							</span>
-							<span style="float: left; padding-left: 10px;margin-top: 10px;">
-								<label>KØREKORT</label>
-								<input type="text" id="i-dmv" disabled="disabled" style="width: 90px;">
-							</span>
+						<div class="identity" style="clear: both;" id="lookup">
+							<h2>SØG I REGISTERET</h2>
+							<input type="text" id="i-navn" placeholder="Foretag søgning">
+							<br>
+							<table class="t-result" style="clear: both;" id="result">
+							</table>
 						</div>
-						<div class="regi">
-						</div>
+						
 					</div>
 				</div>
 			</div>

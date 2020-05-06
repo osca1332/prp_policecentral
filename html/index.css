@@ -12,41 +12,24 @@ body {
     position: relative;
     margin: 1% auto;
 }
-.typesearch {
-  width: 30%;
-  float: left;
-  padding-bottom: 20px;
+
+
+
+.identity {
+  padding-top: 100px;
 }
 
-::placeholder {
-  color: rgb(0,36,70);
-}
-
-#type {
-  font-size: 14px;
-}
-
-.psearch{
-  padding-top: 0px;
-  width: 30%;
-  float: left;
-}
-
-.psearch input {
-  padding-left: 10px;
-}
-
-.regi {
-  margin-top: 100px;
-  padding: 10px 15px;
+.identity h2 {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
   color: white;
-  font-family: sans-serif;
-  line-height: 20px;
-  height: 350px;
-  width: 90%;
-  display: inline-block;
-  background: rgba(0,0,0,.5);
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+  width: 50%;
 }
+
 
 .plate {
   position: absolute;
@@ -54,6 +37,7 @@ body {
   width: 100%;
   padding-top: 55px;
   padding-left: 30px;
+  padding-right: 30px;
 }
 
 
@@ -76,12 +60,7 @@ body {
   color: rgb(0,36,70);
 }
 
-#type {
-  width: 150px;
-  height: 35px;
-  text-align: center;
-  background: rgb(212,230,0);
-}
+
 
 .plate label {
   display:block;
@@ -103,16 +82,7 @@ body {
   right: 0px;
 }
 
-.button:hover {
-  background-color: #444;
-}
 
-
-.nav {
-  position: absolute;
-  top: 20px;
-  left: 45px;
-}
 
 
 .content {
@@ -122,3 +92,42 @@ body {
   border-radius: 5px;
   position: absolute;
 }
+
+
+
+.t-result {
+  margin: 0 auto;
+  font-family: 'Courier New', Courier, monospace;
+  width: 50%;
+  border-collapse: collapse; /* Collapse borders */
+  /*border: 1px solid rgb(212,230,0); /* Add a grey border */
+  font-size: 14px; /* Increase font-size */
+}
+
+
+
+.t-result th, .t-result td {
+  text-align: center; /* Left-align text */
+  background: rgb(212,230,0);
+  padding: 12px 0;
+  color: black;
+  
+}
+
+.t-result tr:hover td {
+  /* Add a grey background color to the table header and on hover */
+  background-color: rgb(18, 181, 255);
+}
+
+
+#i-navn {
+  display: block;
+  width: 50%;
+  height: 40px;
+  margin: 0 auto;
+}
+
+::placeholder {
+  color: rgb(0,36,70);
+}
+
