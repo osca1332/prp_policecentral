@@ -31,6 +31,16 @@ $(function () {
                 display(false)
             }
         }
+
+        if (item.type === "result") {
+            var data = item.obj;
+
+            for (var i = 0; i<data.length;i++) {
+                var x = document.getElementById("result").insertRow(i);
+                x.insertCell(0).innerHTML = data[i].name;
+            }
+
+        }
     })
     // if the person uses the escape key, it will exit the resource
     document.onkeyup = function (data) {
@@ -60,10 +70,5 @@ $(function () {
             return
 	    }
 	});
-
-    $("#cross").click(function() {
-        $.post('http://prp_policecentral/exit', JSON.stringify({}));
-        return
-    });
 
 })

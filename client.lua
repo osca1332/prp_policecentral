@@ -63,7 +63,15 @@ end)
 
 
 
+RegisterNetEvent("prp:returnQuery")
+AddEventHandler("prp:returnQuery", function(obj)
+	SendNUIMessage({
+		type = "result",
+		obj = obj
+	})
 
+
+end)
 
 
 Citizen.CreateThread(function()
