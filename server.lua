@@ -23,6 +23,16 @@ end)
 
 
 
+RegisterNetEvent("prp:searchDb")
+AddEventHandler("prp:searchDb", function(query) 
+	local pl = source
+	
+	local query = "SELECT * FROM `vrp_user_identities` WHERE '25' in (firstname , age ,registration , name, phone)"
+	
+end)
+
+
+
 
 RegisterNetEvent("licenseCheck")
 AddEventHandler("licenseCheck", function(data)
@@ -78,105 +88,3 @@ AddEventHandler("licenseCheck", function(data)
 	end)
 end)
 
-RegisterNetEvent("nameCheck")
-AddEventHandler("nameCheck", function(name)
-
-	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE UPPER(firstname)=UPPER(@first) AND UPPER(name)=UPPER(@last)", {first = name.first, last= name.last}, function(rows)
-		local identity = rows[1]
-		if identity ~= nil then
-			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				local rec
-        if rows[1] ~= nil then
-          rec = rows[1].dvalue
-        else
-          rec = "..."
-        end
-        MySQL.Async.fetchAll("SELECT * FROM vrp_users WHERE id = @uid", {uid=identity.user_id}, function(rows)
-          
-          temp = {
-            uid = identity.user_id,
-            name = identity.name,
-            first = identity.firstname,
-            cpr = identity.registration,
-            phone = identity.phone,
-            age = identity.age,
-            record = rec,
-            license = "..."
-          }
-
-
-          if #rows > 0 then
-            temp.license = rows[1].DmvTest
-          else
-            temp.license = 1
-          end
-            
-          if temp.license == 3 then
-            temp.license = "Ja"
-          elseif temp.license == 2 then
-            temp.license = "Frataget"
-          else
-            temp.license = "Nej"
-          end
-          TriggerClientEvent("pc:send", pl, 1, temp)
-        end)
-    end)
-		else
-			TriggerClientEvent("pc:send", pl, -1, temp)
-		end
-	end)
-end)
-
-RegisterNetEvent("phoneCheck")
-AddEventHandler("phoneCheck", function(phone)
-
-	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE phone=@ph", {ph = phone}, function(rows)
-		local identity = rows[1]
-		if identity ~= nil then
-			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				local rec
-        if rows[1] ~= nil then
-          rec = rows[1].dvalue
-        else
-          rec = "..."
-        end
-        
-        MySQL.Async.fetchAll("SELECT * FROM vrp_users WHERE id = @uid", {uid=identity.user_id}, function(rows)
-          
-          temp = {
-            uid = identity.user_id,
-            name = identity.name,
-            first = identity.firstname,
-            cpr = identity.registration,
-            phone = identity.phone,
-            age = identity.age,
-            record = rec,
-            license = "..."
-          }
-
-
-          if #rows > 0 then
-            temp.license = rows[1].DmvTest
-          else
-            temp.license = 1
-          end
-            
-          if temp.license == 3 then
-            temp.license = "Ja"
-          elseif temp.license == 2 then
-            temp.license = "Frataget"
-          else
-            temp.license = "Nej"
-          end
-          TriggerClientEvent("pc:send", pl, 1, temp)
-        end)
-        
-      end)
-
-		else
-			TriggerClientEvent("pc:send", pl, -1, temp)
-		end
-	end)
-end)

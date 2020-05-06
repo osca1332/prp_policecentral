@@ -57,13 +57,6 @@ RegisterNUICallback("licenseCheck", function(data)
 	TriggerServerEvent("licenseCheck", tostring(data.text))
 end)
 
-RegisterNUICallback("nameCheck", function(data)
-	TriggerServerEvent("nameCheck", data)
-end)
-
-RegisterNUICallback("phoneCheck", function(data)
-	TriggerServerEvent("phoneCheck", tostring(data.phone))
-end)
 
 
 
