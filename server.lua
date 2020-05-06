@@ -28,7 +28,20 @@ AddEventHandler("prp:searchDb", function(query)
 	local pl = source
 	
 	local query = "SELECT * FROM `vrp_user_identities` WHERE '25' in (firstname , age ,registration , name, phone)"
-	
+	MySQL.Async.fetchAll("SELECT firstname, name FROM vrp_user_identities WHERE @s in (firstname , age ,registration , name, phone)", {s = data}, function(rows)
+		
+		local temp = {}
+		
+		if #rows > 0 then
+		
+		
+		else 
+			
+		
+		end
+		
+		TriggerClientEvent("prp:returnQuery", pl, temp)
+	end)
 end)
 
 

@@ -27,7 +27,22 @@ body {
   color: white;
   font-family: 'Courier New', Courier, monospace;
   font-weight: 800;
+  font-size: 24px;
   width: 50%;
+  text-decoration: underline;
+}
+
+.identity p {
+  display: block;
+  margin: 0 auto;
+  text-align: center;
+  padding: 10px 0;
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  font-weight: 800;
+  width: 50%;
+  font-size: 12px;
+  opacity: 65%;
 }
 
 
@@ -46,6 +61,7 @@ body {
   border: 1px solid rgb(212,230,0) !important;
   color: rgb(212,230,0) !important;
   text-align: center;
+  font-size: 18px;
 }
 
 .plate input {

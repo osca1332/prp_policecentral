@@ -53,8 +53,8 @@ end)
 
 
 
-RegisterNUICallback("licenseCheck", function(data)
-	TriggerServerEvent("licenseCheck", tostring(data.text))
+RegisterNUICallback("searchDB", function(data)
+	TriggerServerEvent("prp:searchDb", tostring(data.text))
 end)
 
 

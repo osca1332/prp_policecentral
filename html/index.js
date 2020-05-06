@@ -54,11 +54,10 @@ $(function () {
     $("#i-navn").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
             let input = document.getElementById("i-navn").value;
-            /* 
-                Her skal vi sende request til databasen om en liste med alle navne der passer på input.
-            
-            */
-            return;
+             $.post('http://prp_policecentral/searchDB', JSON.stringify({
+             	data: input
+             }));
+            return
 	    }
 	});
 
