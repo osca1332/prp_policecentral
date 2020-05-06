@@ -23,80 +23,19 @@ end)
 
 
 
-RegisterNetEvent("prp:searchDb")
-AddEventHandler("prp:searchDb", function(query) 
+RegisterNetEvent("p_check")
+AddEventHandler("p_check", function(data)
 	local pl = source
-	
-	MySQL.Async.fetchAll("SELECT firstname, name FROM vrp_user_identities WHERE @s in (firstname , age ,registration , name, phone)", {s = data}, function(rows)
-    
-
+	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE @usid in (firstname , age ,registration , name, phone)", {usid = data}, function(rows)
 		local temp = {
     }
-		
 		if #rows > 0 then
-      for i = 1, i < #rows do
-        temp[i].name = rows[i].name..", "..rows[i].firstname
-      end	
+      for i = 1, #rows do
+        temp[i] = rows[i].name..", "..rows[i].firstname
+      end
 		end
 		
 		TriggerClientEvent("prp:returnQuery", pl, temp)
-	end)
-end)
-
-
-
-
-RegisterNetEvent("licenseCheck")
-AddEventHandler("licenseCheck", function(data)
-
-	local pl = source
-	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE registration=@registration", {registration = data}, function(rows)
-		local identity = rows[1]
-		if identity ~= nil then
-			MySQL.Async.fetchAll("SELECT dvalue FROM vrp_user_data WHERE dkey = 'vRP:police_records' and user_id=@id", {id=identity.user_id}, function(rows)
-				local rec
-        if rows[1] ~= nil then
-          rec = rows[1].dvalue
-        else
-          rec = "..."
-        end
-
-
-
-        MySQL.Async.fetchAll("SELECT * FROM vrp_users WHERE id = @uid", {uid=identity.user_id}, function(rows)
-          
-          temp = {
-            uid = identity.user_id,
-            name = identity.name,
-            first = identity.firstname,
-            cpr = identity.registration,
-            phone = identity.phone,
-            age = identity.age,
-            record = rec,
-            license = "..."
-          }
-
-
-          if #rows > 0 then
-            temp.license = rows[1].DmvTest
-          else
-            temp.license = 1
-          end
-            
-          if temp.license == 3 then
-            temp.license = "Ja"
-          elseif temp.license == 2 then
-            temp.license = "Frataget"
-          else
-            temp.license = "Nej"
-          end
-          TriggerClientEvent("pc:send", pl, 1, temp)
-        end)
-      end)
-
-		else
-			TriggerClientEvent("pc:send", pl, -1, temp)
-		end
 	end)
 end)
 

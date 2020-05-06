@@ -4,13 +4,6 @@
 $(function () {
 
 
-    var data = {
-        "Persons":[
-        {"firstName": "John","lastName": "Smith"},
-        {"firstName": "Lars","lastName": "Smith"},
-        ]
-    }
-
     function display(bool) {
         if (bool) {
             $(".tablet").show();
@@ -20,7 +13,7 @@ $(function () {
     }
 
 
-    display(true)
+    display(false)
 
     window.addEventListener('message', function(event) {
         var item = event.data;
@@ -34,10 +27,10 @@ $(function () {
 
         if (item.type === "result") {
             var data = item.obj;
-
+            document.getElementById("result").innerHTML =""
             for (var i = 0; i<data.length;i++) {
                 var x = document.getElementById("result").insertRow(i);
-                x.insertCell(0).innerHTML = data[i].name;
+                x.insertCell(0).innerHTML = data[i];
             }
 
         }
@@ -63,9 +56,10 @@ $(function () {
 
     $("#i-navn").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
+
             let input = document.getElementById("i-navn").value;
              $.post('http://prp_policecentral/searchDB', JSON.stringify({
-             	data: input
+             	text: input
              }));
             return
 	    }

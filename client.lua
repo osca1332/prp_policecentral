@@ -54,7 +54,8 @@ end)
 
 
 RegisterNUICallback("searchDB", function(data)
-	TriggerServerEvent("prp:searchDb", tostring(data.text))
+	--chat("Sent Info"..data.text, {0,255,0})
+	TriggerServerEvent("p_check", data.text)
 end)
 
 
