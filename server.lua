@@ -28,11 +28,11 @@ AddEventHandler("p_check", function(data)
 	local pl = source
 	MySQL.Async.fetchAll("SELECT * FROM vrp_user_identities WHERE @usid in (firstname , age ,registration , name, phone)", {usid = data}, function(rows)
 		local temp = {
-    }
+    	}
 		if #rows > 0 then
-      for i = 1, #rows do
-        temp[i] = rows[i].name..", "..rows[i].firstname
-      end
+			for i = 1, #rows do
+				temp[i] = rows[i]
+			end
 		end
 		
 		TriggerClientEvent("prp:returnQuery", pl, temp)

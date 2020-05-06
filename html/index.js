@@ -1,4 +1,5 @@
 
+var iden;
 
 
 $(function () {
@@ -13,7 +14,8 @@ $(function () {
     }
 
 
-    display(false)
+    display(true)
+    $(".t-info").hide();
 
     window.addEventListener('message', function(event) {
         var item = event.data;
@@ -27,10 +29,11 @@ $(function () {
 
         if (item.type === "result") {
             var data = item.obj;
+            iden = data;
             document.getElementById("result").innerHTML =""
             for (var i = 0; i<data.length;i++) {
                 var x = document.getElementById("result").insertRow(i);
-                x.insertCell(0).innerHTML = data[i];
+                x.insertCell(0).innerHTML = data[i].name+", "+data[i].firstname;
             }
 
         }
@@ -63,6 +66,23 @@ $(function () {
              }));
             return
 	    }
-	});
+    });
+    
+
+    $("tr").click(function(){
+        person = iden[this.rowIndex];
+        $(".identity").hide();
+        $(".t-info").show();
+        document.getElementById("t-navn").innerHTML = person.name+", "+person.firstname;
+        document.getElementById("t-age").innerHTML = person.age+" år";
+        document.getElementById("t-cpr").innerHTML = person.cpr;
+        document.getElementById("t-telf").innerHTML = person.phone;
+        
+        let record = person.rec;
+        record = record.split("<br />");
+
+        var x = document.getElementById("t-rep").insertRow(0)
+        x.insertCell(0).innerHTML = "<span>"+record+"</span>";
+    });
 
 })
