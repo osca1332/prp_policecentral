@@ -29,6 +29,7 @@ $(function () {
 
         if (item.type === "result") {
             var data = item.obj;
+            iden = null;
             iden = data;
             document.getElementById("result").innerHTML =""
             for (var i = 0; i<data.length;i++) {
@@ -70,7 +71,7 @@ $(function () {
     
 
     $("tr").click(function(){
-        person = iden[this.rowIndex];
+        let person = iden[this.rowIndex];
         $(".identity").hide();
         $(".t-info").show();
         document.getElementById("t-navn").innerHTML = person.name+", "+person.firstname;
