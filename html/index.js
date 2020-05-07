@@ -50,7 +50,12 @@ $(function () {
 
                     var x = document.getElementById("t-rep").insertRow(0)
                     for(let j = 0; j<record.length; j++) {
-                        x.insertCell(0).innerHTML = record[j];
+                        if(j % 2 == 0) {
+                            x.insertCell(0).innerHTML = "<span>"+record[j]+"</span>";
+                        } else{
+                            x.insertCell(0).innerHTML = record[j];
+                        }
+                        
 
                     }
                 });
