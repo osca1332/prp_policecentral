@@ -38,10 +38,10 @@ $(function () {
                 x.addEventListener("click", function(){
                     $(".identity").hide();
                     $(".t-info").show();
-                    document.getElementById("t-navn").innerHTML = data[i].name+", "+data[i].firstname;
-                    document.getElementById("t-age").innerHTML = data[i].age+" år";
-                    document.getElementById("t-cpr").innerHTML = data[i].cpr;
-                    document.getElementById("t-telf").innerHTML = data[i].phone;
+                    document.getElementById("t-navn").innerHTML = data[this.rowIndex].name+", "+data[this.rowIndex].firstname;
+                    document.getElementById("t-age").innerHTML = data[this.rowIndex].age+" år";
+                    document.getElementById("t-cpr").innerHTML = data[this.rowIndex].cpr;
+                    document.getElementById("t-telf").innerHTML = data[this.rowIndex].phone;
 
 
 
