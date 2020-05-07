@@ -192,14 +192,14 @@ SECOND PAGE
   color: black;
   background-color: rgb(251,174,21);
   padding: 5px;
-  margin: 10px 0px 10px 0px;
+  line-height: 15px;
   
 }
 
 .straf td {
   clear: both;
   display: block;
-  padding: 15px;
+  padding: 5px;
   color: rgb(18, 181, 255);
   
 }
