@@ -40,7 +40,7 @@ $(function () {
                     $(".t-info").show();
                     document.getElementById("t-navn").innerHTML = data[this.rowIndex].name+", "+data[this.rowIndex].firstname;
                     document.getElementById("t-age").innerHTML = data[this.rowIndex].age+" år";
-                    document.getElementById("t-cpr").innerHTML = data[this.rowIndex].cpr;
+                    document.getElementById("t-cpr").innerHTML = data[this.rowIndex].registration;
                     document.getElementById("t-telf").innerHTML = data[this.rowIndex].phone;
 
 
