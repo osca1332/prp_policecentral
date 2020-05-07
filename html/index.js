@@ -35,6 +35,17 @@ $(function () {
             for (var i = 0; i<data.length;i++) {
                 var x = document.getElementById("result").insertRow(i);
                 x.insertCell(0).innerHTML = data[i].name+", "+data[i].firstname;
+                x.addEventListener("click", function(){
+                    $(".identity").hide();
+                    $(".t-info").show();
+                    document.getElementById("t-navn").innerHTML = data[i].name+", "+data[i].firstname;
+                    document.getElementById("t-age").innerHTML = data[i].age+" år";
+                    document.getElementById("t-cpr").innerHTML = data[i].cpr;
+                    document.getElementById("t-telf").innerHTML = data[i].phone;
+
+
+
+                });
             }
 
         }
@@ -60,7 +71,6 @@ $(function () {
 
     $("#i-navn").on("keydown",function search(e) {
     	if(e.keyCode == 13) {
-
             let input = document.getElementById("i-navn").value;
              $.post('http://prp_policecentral/searchDB', JSON.stringify({
              	text: input
@@ -69,22 +79,8 @@ $(function () {
 	    }
     });
     
+    
 
-    $("tr").click(function(){
-        console.log("Hello")
-        let person = iden[this.rowIndex];
-        $(".identity").hide();
-        $(".t-info").show();
-        document.getElementById("t-navn").innerHTML = person.name+", "+person.firstname;
-        document.getElementById("t-age").innerHTML = person.age+" år";
-        document.getElementById("t-cpr").innerHTML = person.cpr;
-        document.getElementById("t-telf").innerHTML = person.phone;
-        
-        let record = person.rec;
-        record = record.split("<br />");
-
-        var x = document.getElementById("t-rep").insertRow(0)
-        x.insertCell(0).innerHTML = "<span>"+record+"</span>";
-    });
+    
 
 })
