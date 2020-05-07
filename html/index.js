@@ -14,7 +14,7 @@ $(function () {
     }
 
 
-    display(true)
+    display(false)
     $(".t-info").hide();
 
     window.addEventListener('message', function(event) {
