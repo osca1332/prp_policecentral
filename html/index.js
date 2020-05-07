@@ -31,7 +31,8 @@ $(function () {
             var data = item.obj;
             iden = null;
             iden = data;
-            document.getElementById("result").innerHTML =""
+            document.getElementById("result").innerHTML ="";
+            document.getElementById("t-rep").innerHTML = "";
             for (var i = 0; i<data.length;i++) {
                 var x = document.getElementById("result").insertRow(i);
                 x.insertCell(0).innerHTML = data[i].name+", "+data[i].firstname;
