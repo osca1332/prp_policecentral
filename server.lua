@@ -45,7 +45,7 @@ AddEventHandler("p_check", function(data)
 				end
 
 				if person[i].rec == nil then
-					person[i].rec = "Ingen tidligere straffe!"
+					person[i].rec = "Straffeattest clean!"
 				end
 			end
 		end
