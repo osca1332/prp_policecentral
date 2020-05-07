@@ -37,6 +37,7 @@ $(function () {
                 var x = document.getElementById("result").insertRow(i);
                 x.insertCell(0).innerHTML = data[i].name+", "+data[i].firstname;
                 x.addEventListener("click", function(){
+                    document.getElementById("t-rep").innerHTML = "";
                     $(".identity").hide();
                     $(".t-info").show();
                     document.getElementById("t-navn").innerHTML = data[this.rowIndex].name+", "+data[this.rowIndex].firstname;
