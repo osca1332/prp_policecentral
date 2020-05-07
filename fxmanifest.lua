@@ -18,6 +18,7 @@ files {
   "html/index.js",
   "html/index.css",
   "html/reset.css",
+  "html/info.css"
 }
 
 server_scripts {
