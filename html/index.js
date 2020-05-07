@@ -44,7 +44,11 @@ $(function () {
                     document.getElementById("t-telf").innerHTML = data[this.rowIndex].phone;
 
 
+                    let record = data[this.rowIndex].rec;
+                    record = record.split("<br />");
 
+                    var x = document.getElementById("t-rep").insertRow(0)
+                    x.insertCell(0).innerHTML = "<span>"+record+"</span>";
                 });
             }
 
