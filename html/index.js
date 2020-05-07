@@ -68,6 +68,11 @@ $(function () {
         if (data.which == 116) {
             $.post('http://prp_policecentral/exit', JSON.stringify({}));
             return
+        } 
+        if (data.which == 27) {
+            $(".t-info").hide();
+            $(".identity").show();
+            return
         }
     };
 
