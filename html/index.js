@@ -48,7 +48,9 @@ $(function () {
                     record = record.split("<br />");
 
                     var x = document.getElementById("t-rep").insertRow(0)
-                    x.insertCell(0).innerHTML = "<span>"+record+"</span>";
+                    for(let j = 0; j<record.length; j++) {
+                        x.insertCell(0).innerHTML = "<span>"+record[j]+"</span>";
+                    }
                 });
             }
 
