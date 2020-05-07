@@ -71,6 +71,7 @@ $(function () {
     
 
     $("tr").click(function(){
+        console.log("Hello")
         let person = iden[this.rowIndex];
         $(".identity").hide();
         $(".t-info").show();
