@@ -43,6 +43,10 @@ AddEventHandler("p_check", function(data)
 				else
 					person[i].license = "..."
 				end
+
+				if person[i].rec == nil then
+					person[i].rec = "Ingen tidligere straffe!"
+				end
 			end
 		end
 
