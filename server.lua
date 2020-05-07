@@ -33,6 +33,16 @@ AddEventHandler("p_check", function(data)
 			for i = 1, #rows do
 				person[i] = rows[i]
 				person[i].rec = MySQL.Sync.fetchScalar("SELECT dvalue FROM vrp_user_data WHERE dkey='vRP:police_records' AND user_id=@uid", {uid=person[i].user_id})
+				licen = MySQL.Sync.fetchScalar("SELECT DmvTest FROM vrp_users WHERE id=@uid", {uid=person[i].user_id})
+				if licen == 3 then
+					person[i].license = "Ja"
+				elseif licen == 2 then
+					person[i].license = "Frataget"
+				elseif licen == 1 then
+					person[i].license = "Nej"
+				else
+					person[i].license = "..."
+				end
 			end
 		end
 

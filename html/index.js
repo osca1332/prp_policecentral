@@ -44,6 +44,7 @@ $(function () {
                     document.getElementById("t-age").innerHTML = data[this.rowIndex].age+" år";
                     document.getElementById("t-cpr").innerHTML = data[this.rowIndex].registration;
                     document.getElementById("t-telf").innerHTML = data[this.rowIndex].phone;
+                    document.getElementById("t-licen").innerHTML = data[this.rowIndex].license;
 
 
                     let record = data[this.rowIndex].rec;
