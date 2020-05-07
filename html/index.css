@@ -191,8 +191,8 @@ SECOND PAGE
 .straf span {
   color: black;
   background-color: rgb(251,174,21);
-  line-height: 10px;
   padding: 5px;
+  margin: 10px 0px 10px 0px;
   
 }
 
